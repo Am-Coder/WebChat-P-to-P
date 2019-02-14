@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Doctor Login</title>
+        <link rel="icon" type="image/ico" href="Images/logo.png" />
+        <link href="https://fonts.googleapis.com/css?family=PT+Mono|Righteous|Source+Code+Pro|Changa|Grand+Hotel|Quantico|Fauna+One" rel="stylesheet">
+        <link href="login.css" rel="stylesheet">
+        <!-- <script src="doctor_login.js"></script> -->
+    </head>
+    <body class="bg_image">
+        <div class="heading">
+            <p>Join Our Community</p>
+        </div>
+        <div class="loginbox">
+            <h1 style="font-size: 25px;">Login</h1>
+            <form name="login-form">
+                <input type="text" id="email" placeholder="Enter E-Mail ID..." required>
+                <input type="password" id="password" placeholder="Enter Password..." required>
+                <div class="forgot_password"\><a href="forgot-pass.html">Forgot Password?</a></div>
+                <input type="button" value="Login" class="login" id="btlogin" onclick="login()"/>
+                <div class="sign_up">Don't have an account? <a href="signup.html" style="color:#692c7e"><b>Sign Up</b></a></div>
+            </form>
+        </div>
+    <!-- </script> -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    <script src="fire_log.js"></script>
+    </body>
+</html>

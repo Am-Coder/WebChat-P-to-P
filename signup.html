@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Doctor SignUp</title>
+        <link rel="icon" type="image/ico" href="Images/logo.png" />
+        <link href="signup.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=PT+Mono|Righteous|Source+Code+Pro|Changa|Grand+Hotel|Quantico|Fauna+One|Ubuntu|Bitter|Staatliches" rel="stylesheet">
+    </head>
+    <body class="bg_image">
+        <div class="heading">
+            Join Our Community !
+        </div>
+        <div class="loginbox">
+                <div class="form_heading"> Sign Up</div>
+                <p class="condition">Please fill in this form to create an account.</p>
+                <p class="condition">* marked are mandatory to be filled.</p>
+                <hr>
+                <div class="elements">
+                    <label for="email"><b>Email*</b></label><br>
+                    <input type="text" placeholder="Enter Email" id="email" required><br>
+                
+                    <label for="psw"><b>Password*</b></label><br>
+                    <input type="password" placeholder="Enter Password" id="password" required><br>
+                
+              
+                    <label for="name"><b>Full Name*</b></label><br>
+                    <input type="text" placeholder="Full Name" id="f-name" required><br>
+
+
+                </div>    
+                <p style="font-family: Bitter">By creating an account you agree to our <a href="#" style="color:#8479c9">Terms & Privacy</a>.</p><br>
+
+                <div class="clearfix">
+                    <button type="button" class="cancelbtn" onclick="cancelSignUp()">Cancel</button>
+                    <button id="btSign" class="signupbtn" >Sign Up</button>
+                </div>
+        </div>
+        <script rel="text/javascript" src="signup.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script src="fire_sign.js"></script>
+    </body>
+</html>

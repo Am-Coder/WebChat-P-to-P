@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Packet Code Chat Room</title>
+        <link rel = "stylesheet" href = "css/style.css">
+        <link rel = "stylesheet" href = "css/bootstrap.css">
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <script src="jquery.js"></script>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDvvnPLQMzF3JOdg-ddsdV5sah6FpEpOsY",
+            authDomain: "doctalkfinal-ce5b5.firebaseapp.com",
+            databaseURL: "https://doctalkfinal-ce5b5.firebaseio.com",
+            projectId: "doctalkfinal-ce5b5",
+            storageBucket: "doctalkfinal-ce5b5.appspot.com",
+            messagingSenderId: "1039956260614"
+        };
+            firebase.initializeApp(config);
+            var name = "";
+            
+            
+            $(document).ready(function(){
+                firebase.database().ref('Messages/').on('child_added', function(snapshot){
+                    var data = "<div id = 'm'><p class = 'name'>" + snapshot.child('name').val() + "</p><p class = 'message'>" + snapshot.child('message').val() + "</p></div>";
+
+                    $("#messages").html($("#messages").html() + data);
+                });
+
+                firebase.database().ref('Messages/').on('child_changed', function(snapshot){
+                    var data = "<div id = 'm'><p class = 'name'>" + snapshot.child('name').val() + "</p><p class = 'message'>" + snapshot.child('message').val() + "</p></div>";
+
+                    $("#messages").html($("#messages").html() + data);
+                });
+                
+                // $("#name_submit").on('click', function(){                    
+                    // name = $("#name").val();
+                    
+                    // $("#name_prompt_parent").fadeOut();
+                    
+                    // firebase.database().ref('Messages/'+firebase.auth().currentUser.uid).set({
+                    //     name: "",
+                    //     message: "<i>" + name + " joined the chatroom</i>"
+                    // });
+                // }); 
+                
+                $("#send_button").on('click', function(){
+                    var uid=firebase.auth().currentUser.uid;
+
+                    var mess = $("#msg").val();
+                    var docref=firebase.database().ref("doctor/"+uid);
+                    var patref=firebase.database().ref("patient/"+uid);
+                    docref.once("value",function(snapshot){
+                        if(snapshot.exists()){
+                                name = "Doctor";
+                                firebase.database().ref('Messages').push({
+                                name: name,
+                                message: mess
+                            });
+                        }
+                    });
+                    patref.once("value",function(snapshot){
+                        if(snapshot.exists()){
+                                name = "Patient";
+                                firebase.database().ref('Messages').push({
+                                name: name,
+                                message: mess
+                            });
+                        }
+                    });
+
+                    
+                    $("#msg").val("");
+                });
+                
+            });
+            
+        </script>
+    </head>
+    
+    <body>
+        <!-- <div id = "name_prompt_parent">
+            <div id = "name_prompt">
+                <p class = "title">Hey There ! Why don't you say us your name ?</p>
+                <input type = "text" id = "name" class = "form-control">
+                <br>
+                <button id = "name_submit" class = "btn btn-success">Submit</button>
+            </div>
+        </div> -->
+        
+        <div id = "chatroom">
+            <div id = "messages">
+                
+            </div>
+            <div id = "input">
+                <textarea id = "msg" class = "form-control" id = "message"></textarea>
+                <button id = "send_button" class = "btn btn-primary">Send</button>
+            </div>
+        </div>
+    
+    </body>
+</html>

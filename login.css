@@ -1,0 +1,139 @@
+.bg_image{
+    background-image:linear-gradient(rgba(223,252,255,0.6),rgba(215,249,255,0.6));
+}
+
+.brkline {
+    border: 2px solid black;
+}
+
+.logoimg {
+    width:5%;
+}
+
+.heading {
+    font-family: Righteous;
+    font-weight: bold;
+    font-size: 60px;
+    font-size: 60px;
+    color:#692c7e;
+    padding: 5px;
+    text-align: center;
+}
+
+.loginbox {
+    width: 320px;
+    height: 400px;
+    background: rgba(0,0,0,0.18);
+    color: rgb(255,244,224);
+    top: 65%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 40px;
+    padding: 70px 30px;
+    align-items: center;
+}
+
+
+.avatar {
+    width: 100px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -75px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0px;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+    font-family: Aclonica;
+    font-weight: bold;
+}
+
+.loginbox h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #692c7e;
+    margin-top: 5%;
+    font-family: 'PT Mono', cursive;
+    font-weight: bolder;
+}
+
+.loginbox input{
+    width: 75%;
+    margin-bottom: 20px;
+    margin-left: 12.5%;
+}
+
+.loginbox input[type="text"], input[type="password"]{
+    border: 2px solid rgb(132,121,201);
+    background: none;
+    display: block;
+    margin: 12px auto;
+    height: 40px;
+    color: #692c7e;
+    font-size: 16px;
+    padding: 14px 10px;
+    border-radius: 45px;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.loginbox input[type="text"] {
+    margin-top: 5%;
+}
+
+.loginbox input[type="text"]:focus, input[type="password"]:focus {
+    border: 2px solid rgb(105,44,126);
+    width: 100%;
+    height: 17%;
+    outline: none;
+}
+
+.forgot_password {
+    border: none;
+    outline: none;
+    margin-top: 0%;
+    padding: 0%;
+    font-family: Quantico;
+    margin-left: 45%;
+    color: #692c76;
+    background: transparent;
+}
+
+.loginbox input[type="button"]{
+    margin-top: 5%;
+    outline: none;
+    width: 40%;
+    margin-left: 30%;
+    height: 40px;
+    border: 2px solid rgb(105,44,126);
+    background: transparent;
+    font-family: Actor;
+    text-transform: uppercase;
+    font-family: Changa;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="button"]:hover {
+    cursor: pointer;
+    background: rgb(105,44,126);
+    color: rgb(255,244,224);
+}
+
+.sign_up {
+    text-align: center;
+    font-size: 1em;
+    color: rgb(132,121,201);
+    font-family: Fauna One;
+}
+
+::placeholder {
+    color: #692c7e;
+    font-family: Source Code Pro;
+}

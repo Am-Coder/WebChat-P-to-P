@@ -287,9 +287,9 @@ ul li:nth-child(5) span {
     background:  #ff0000;
 }
 
-#user {
-    box-shadow: 5px 5px 5px gray;
-
+#usersCollection > * {
+    box-shadow: 15px 15px 15px gray;
+    background-color: antiquewhite;
     font-family: Segoe Print;
     font-weight: bolder;
     text-align: center;

@@ -1,6 +1,6 @@
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDvvnPLQMzF3JOdg-ddsdV5sah6FpEpOsY",
+    apiKey: "******",
     authDomain: "doctalkfinal-ce5b5.firebaseapp.com",
     databaseURL: "https://doctalkfinal-ce5b5.firebaseio.com",
     projectId: "doctalkfinal-ce5b5",

@@ -5,10 +5,21 @@
         <link rel = "stylesheet" href = "css/bootstrap.css">
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
         <script src="jquery.js"></script>
-        
+        <script src="fire_chat.js"></script>
+
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
         <script>
         // Initialize Firebase
+        var query = window.location.search;
+        if(query.substring(0,1)=='?')
+        {
+            query=query.substring(1);
+        }     
+        // query=JSON.parse(query);
+        query=query.replace('var=','');
+        num = parseInt(query);
+        console.log(num);
+
         var config = {
             apiKey: "AIzaSyDMyu454hQSUzQO5_YynSBr6Ec2lc35Hp4",
             authDomain: "p-to-p-6d1ab.firebaseapp.com",
@@ -22,13 +33,13 @@
             
             
             $(document).ready(function(){
-                firebase.database().ref('Messages/').on('child_added', function(snapshot){
+                firebase.database().ref('Chat/'+num).on('child_added', function(snapshot){
                     var data = "<div id = 'm'><p class = 'name'>" + snapshot.child('name').val() + "</p><p class = 'message'>" + snapshot.child('message').val() + "</p></div>";
 
                     $("#messages").html($("#messages").html() + data);
                 });
 
-                firebase.database().ref('Messages/').on('child_changed', function(snapshot){
+                firebase.database().ref('Chat/'+num).on('child_changed', function(snapshot){
                     var data = "<div id = 'm'><p class = 'name'>" + snapshot.child('name').val() + "</p><p class = 'message'>" + snapshot.child('message').val() + "</p></div>";
 
                     $("#messages").html($("#messages").html() + data);
@@ -43,7 +54,7 @@
                     ref.on("value",function(snapshot){
                         if(snapshot.exists()){
                                 name = snapshot.val().fname;
-                                firebase.database().child('Chat').child().push({
+                                firebase.database().ref().child('Chat').child(num).push({
                                 name: name,
                                 message: mess
                             });

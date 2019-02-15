@@ -8,7 +8,6 @@
     messagingSenderId: "1025663182708"
   };
   firebase.initializeApp(config);
-  var flag=0;
   var emailField = document.getElementById("email");
   var pswField = document.getElementById("password");
   const btLogin = document.getElementById("btlogin");
@@ -18,7 +17,7 @@
 
 firebase.auth().onAuthStateChanged(firebaseUser =>  {
     if(firebaseUser){
-        console.log(firebaseUser);
+        console.log('logged-in');
     }else{
         console.log("not logged in");
     }
@@ -29,7 +28,11 @@ function login(){
     const psw=pswField.value;
     const auth=firebase.auth();
     const promise=auth.signInWithEmailAndPassword(email,psw);
-    (promise.then(function (){window.location.assign("main.html");}).catch(e=> {window.flag=1; alert(e.message);
+    (promise.then(function (){  var id=firebase.auth().currentUser.uid;
+                                console.log(id);
+                                window.location.assign("main.html");})
+            .catch(
+                e=> {alert(e.message);
                                        }));
 
 }

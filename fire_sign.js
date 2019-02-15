@@ -12,11 +12,11 @@
   function writeData(email,psw,name) {
     var firebaseRef = firebase.database().ref();
     user=firebase.auth().currentUser.uid;
-    console.log(user);
+    // console.log(user);
     firebaseRef.child('Users').child(user).set({
       email:email,
       password:psw,
-      fname:name,
+      fname:name
         },
         function(error) {
           if (error) {
@@ -51,7 +51,7 @@ else{
 
 firebase.auth().onAuthStateChanged(firebaseUser =>  {
     if(firebaseUser){
-        console.log(firebaseUser.uid);
+        console.log("Logged In");
     }else{
         console.log("not logged in");
     }
@@ -60,5 +60,5 @@ firebase.auth().onAuthStateChanged(firebaseUser =>  {
 function cancelSignUp() {
   alert("Are you sure?");
   let s = window.location.href;
-  window.location.href = s.replace("doctor_signup", "doctor_login");
+  window.location.href = s.replace("signup", "login");
 }

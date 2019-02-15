@@ -10,7 +10,7 @@ var config = {
 //   firebase.initializeApp(config);
   $(document.getElementById("usersCollection")).ready(function(){
             firebase.database().ref('Users/').on('child_added', function(snapshot){
-                var data = "<div id ="+ snapshot.child('email').val() +"><div id = 'fname'>" + snapshot.child('fname').val() + "</div><br><div id = 'email'>" + snapshot.child('email').val() + "</div><div id='connector'><button id='connectBtn' onclick='goToChat()'>Connect</button></div></div>";
+                var data = "<div id ="+ snapshot.child('email').val() +"><div class = 'fname'>" + snapshot.child('fname').val() + "</div><br><div class = 'email'>" + snapshot.child('email').val() + "</div><div id='connector'><button class='connectBtn' onclick='gotochat()'>Connect</button></div></div>";
 
                 $("#usersCollection").html($("#usersCollection").html() + data);
             });

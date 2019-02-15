@@ -300,7 +300,7 @@ ul li:nth-child(5) span {
 
 
 
-#connectBtn{
+.connectBtn{
     margin-left: 6%;
     text-decoration: none;
     padding: 10px;

@@ -36,12 +36,8 @@ console.log("adasd");
         console.log(sum);
         // console.log(joined);
 
-        // firebase.database().ref().child('Chat').child(sum).push({message:"",}).then(function(){
-            // url='index.html?var='+encodeURIComponent(sum);
-            // window.location.assign(url);
-            // let sd = window.location.href;
-            // window.location.href = sd.replace("main","index");
-        // });
+            url='index.html?var='+encodeURIComponent(sum);
+            window.location.assign(url);
 
     })
 }
